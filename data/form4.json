@@ -1,0 +1,27 @@
+{
+  "topic1": {
+    "title": "Introduction to Bible Knowledge",
+    "subtitle": "Origins, divisions, and historical translations of the Holy Bible",
+    "content": "PHA+V2VsY29tZSB0byA8c3Ryb25nPkludHJvZHVjdGlvbiB0byBCaWJsZSBLbm93bGVkZ2U8L3N0cm9uZz4uIFRoZSBCaWJsZSBpcyBhIGNvbGxlY3Rpb24gb2YgNjYgYm9va3MgZGl2aWRlZCBpbnRvIHRoZSBPbGQgVGVzdGFtZW50ICgzOSBib29rcykgYW5kIE5ldyBUZXN0YW1lbnQgKDI3IGJvb2tzKS4gSXQgc2VydmVzIGFzIHRoZSBwcmltYXJ5IHNvdXJjZSBvZiBDaHJpc3RpYW4gZmFpdGggYW5kIHByYWN0aWNlLjwvcD4="
+  },
+  "topic2": {
+    "title": "The Creation Accounts",
+    "subtitle": "A theological comparison between Genesis chapter 1 and chapter 2",
+    "content": "PHA+VGhlIDxzdHJvbmc+Q3JlYXRpb24gQWNjb3VudHM8L3N0cm9uZz4gaW4gR2VuZXNpcyAxIGFuZCBHZW5lc2lzIDIgZGVzY3JpYmUgaG93IEdvZCBicm91Z2h0IHRoZSB1bml2ZXJzZSBpbnRvIHRoZSBleGlzdGVuY2UuIEdlbmVzaXMgMSBwcmVzZW50cyBhbiBvcmRlcmx5LCBzaXgtZGF5IGNyZWF0aW9uIG5hcnJhdGl2ZSwgd2hpbGUgR2VuZXNpcyAyIGZvY3VzZXMgY2xvc2VseSBvbiB0aGUgY3JlYXRpb24gb2YgbWFuIGFuZCB3b21hbiBpbiB0aGUgR2FyZGVuIG9mIEVkZW4uPC9wPg=="
+  },
+  "topic3": {
+    "title": "The Fall of Man",
+    "subtitle": "Human disobedience, its immediate consequences, and the promise of salvation",
+    "content": "PHA+VGhlIDxzdHJvbmc+RmFsbCBvZiBNYW48L3N0cm9uZz4gcmVjb3JkZWQgaW4gR2VuZXNpcyAzIGRlc2NyaWJlcyBob3cgaHVtYW5pdHkgZGlzb2JleWVkIEdvZCdzIGNvbW1hbmQuIFRlbXB0ZWQgYnkgdGhlIHNlcnBlbnQsIEFkYW0gYW5kIEV2ZSBhdGUgdGhlIGZvcmJpZGRlbiBmcnVpdCwgaW50cm9kdWNpbmcgc2luLCBicm9rZW4gcmVsYXRpb25zaGlwcywgYW5kIHNwaXJpdHVhbCBzZXBhcmF0aW9uIGZyb20gR29kIGludG8gdGhlIHdvcmxkLjwvcD4="
+  },
+  "topic4": {
+    "title": "Noah and the Great Flood",
+    "subtitle": "A study of Divine judgment, moral decay, and Noah's absolute covenant",
+    "content": "PHA+VGhlIGFjY291bnQgb2YgPHN0cm9uZz5Ob2FoIGFuZCB0aGUgR3JlYXQgRmxvb2Q8L3N0cm9uZz4gaW4gR2VuZXNpcyA2LTkgc2hvd3MgR29kJ3MganVkZ21lbnQgb24gd2lkZXNwcmVhZCBodW1hbiB3aWNrZWRuZXNzLCBhcyB3ZWxsIGFzIEhpcyBtZXJjeS4gTm9haCdzIG9iaWRpZW5jZSBpbiBidWlsZGluZyB0aGUgYXJrIHNhdmVkIGhpcyBmYW1pbHkgYW5kIHJlcHJlc2VudGF0aXZlIGFuaW1hbCBsaWZlLCBjdWxtaW5hdGluZyBpbiBHb2QncyBjb3ZlbmFudCBzeW1ib2wsIHRoZSByYWluYm93LjwvcD4="
+  },
+  "topic5": {
+    "title": "The Call of Abraham",
+    "subtitle": "The covenant of faith, leaving Haran, and the promise of a great nation",
+    "content": "PHA+SW4gdGhlIDxzdHJvbmc+Q2FsbCBvZiBBYnJhaGFtPC9zdHJvbmc+IChHZW5lc2lzIDEyKSwgR29kIGNvbW1hbmRzIEFicmFtIHRvIGxlYXZlIGhpcyBob21lbGFuZCBmb3IgYW4gdW5rbm93biBjb3VudHJ5LiBUaHJvdWdoIGhpcyBvYmVkaWVuY2UsIEdvZCBwcm9taXNlcyB0byBtYWtlIGhpbSBhIGdyZWF0IG5hdGlvbiwgYmxlc3MgaGltLCBhbmQgYmxlc3MgYWxsIHRoZSBmYW1pbGllcyBvZiB0aGUgZWFydGggdGhyb3VnaCBoaXMgZGVzY2VuZGFudHMuPC9wPg=="
+  }
+}
