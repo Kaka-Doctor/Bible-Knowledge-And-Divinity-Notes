@@ -7,7 +7,9 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8fafc;
-    overflow: hidden;
+    color: #1e293b;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Base copy prevention across elements */
@@ -22,95 +24,55 @@ body {
 
 .app-container {
     display: flex;
-    width: 100vw;
-    height: 100vh;
-}
-
-/* Sidebar Layout styles */
-.sidebar {
-    width: 280px;
-    background-color: #1e293b;
-    color: #f1f5f9;
-    padding: 30px 20px;
-    display: flex;
     flex-direction: column;
-    gap: 20px;
-    border-right: 1px solid #0f172a;
-    flex-shrink: 0;
+    min-height: 100vh;
 }
 
-.sidebar-header h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
+/* Header Branding */
+.app-header {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 3px solid #14b8a6;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
     letter-spacing: 0.5px;
     color: #2dd4bf;
-    text-align: center;
 }
 
-.sidebar-subtitle {
-    font-size: 0.75rem;
+.brand p {
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: #94a3b8;
-    text-align: center;
     margin-top: 4px;
 }
 
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow-y: auto;
-}
-
-.nav-btn {
-    background-color: #334155;
-    color: #f1f5f9;
-    border: none;
-    padding: 12px 16px;
-    text-align: left;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.nav-btn:hover {
-    background-color: #2dd4bf;
-    color: #0f172a;
-    transform: translateX(4px);
-}
-
-.extra-btn {
-    background-color: #475569;
-}
-
-.nav-separator {
-    border: 0;
-    height: 1px;
-    background: #475569;
-    margin: 10px 0;
-}
-
-/* Content Area layout styles */
+/* Main content workspace margins */
 .main-content {
     flex: 1;
-    padding: 50px;
-    overflow-y: auto;
-}
-
-/* Grid representing 5 interactive Topic Cards */
-.topics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 40px 20px;
 }
 
-/* Stylized interactive cards */
-.topic-icon-card {
+/* Dashboard Grids */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Homepage and Submenu Category Cards */
+.menu-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
@@ -122,108 +84,135 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-}
-
-.topic-icon-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 20px -3px rgb(45 212 191 / 0.15);
-    border-color: #2dd4bf;
-}
-
-/* Circular Icon frame on the card */
-.icon-wrapper {
-    background-color: #f0fdfa;
-    color: #14b8a6;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 12px;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Card Icons */
+.card-icon {
+    font-size: 3rem;
     margin-bottom: 8px;
-    transition: background-color 0.2s;
+    transition: transform 0.2s;
 }
 
-.topic-icon-card:hover .icon-wrapper {
-    background-color: #ccfbf1;
+.menu-card:hover .card-icon {
+    transform: scale(1.15);
 }
 
-.svg-icon {
-    width: 32px;
-    height: 32px;
+/* Colored Boarder Highlights per Category */
+.note-card {
+    border-top: 5px solid #2dd4bf;
+}
+.market-card {
+    border-top: 5px solid #f59e0b;
+}
+.pdf-card {
+    border-top: 5px solid #ef4444;
 }
 
-.topic-number {
-    font-size: 0.75rem;
+.menu-card h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
     font-weight: 700;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.topic-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #1e293b;
-    line-height: 1.4;
-}
-
-.topic-subtitle {
-    font-size: 0.825rem;
+.menu-card p {
+    font-size: 0.85rem;
     color: #64748b;
     line-height: 1.5;
 }
 
-.placeholder-text {
+/* Submenu Headers */
+.submenu-header-block {
     grid-column: 1 / -1;
-    text-align: center;
-    font-size: 1.1rem;
-    color: #64748b;
-    margin-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
-.placeholder-text h2 {
-    color: #1e293b;
-    margin-bottom: 12px;
+.submenu-header-block h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    font-weight: 700;
 }
 
-/* Hidden container behavior */
-.hidden {
-    display: none !important;
+.submenu-inner-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
 }
 
-/* Notes viewing panel */
-.note-view-panel {
-    background: #ffffff;
-    padding: 45px;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    max-width: 850px;
-    margin: 0 auto;
+/* Dynamic Buying Button inside Card */
+.buy-btn {
+    display: inline-block;
+    background-color: #f59e0b;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+.buy-btn:hover {
+    background-color: #d97706;
 }
 
-.back-btn {
+/* Dynamic PDF view Button inside Card */
+.view-btn {
+    display: inline-block;
     background-color: #ef4444;
     color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+.view-btn:hover {
+    background-color: #dc2626;
+}
+
+/* Common Back Buttons */
+.back-btn {
+    background-color: #1e293b;
+    color: #ffffff;
     border: none;
-    padding: 10px 22px;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 8px;
-    margin-bottom: 35px;
     font-size: 0.9rem;
     font-weight: 600;
     transition: background-color 0.2s;
 }
 
 .back-btn:hover {
-    background-color: #dc2626;
+    background-color: #0f172a;
 }
 
-/* Styles for note content */
+/* Note Display View Panel */
+.note-view {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
 #note-body h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #0f172a;
     margin-bottom: 25px;
@@ -232,154 +221,50 @@ body {
 }
 
 #note-body p {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     line-height: 1.85;
     margin-bottom: 20px;
     color: #334155;
     text-align: justify;
 }
 
-#note-body strong {
-    color: #0f172a;
-    font-weight: 700;
+/* Visibility Control */
+.hidden {
+    display: none !important;
 }
 
 /* ==========================================
-   RESPONSIVE DESIGN FOR MOBILE PHONES
+   MOBILE PHONES RESPONSIVE MEDIA STYLES
    ========================================== */
 @media (max-width: 768px) {
-    body {
-        overflow: auto; /* Allow natural page scrolling on mobile */
-    }
-
-    .app-container {
-        flex-direction: column; /* Stack sidebar on top of content */
-        height: auto;
-    }
-
-    /* Transform Sidebar into a Sticky Top Bar */
-    .sidebar {
-        width: 100%;
-        height: auto;
-        padding: 15px 15px 10px 15px;
-        border-right: none;
-        border-bottom: 1px solid #0f172a;
-        position: sticky;
-        top: 0;
-        z-index: 100; /* Keeps menu on top when scrolling notes */
-        gap: 10px;
-    }
-
-    .sidebar-header h2 {
-        font-size: 1.1rem;
-    }
-
-    .sidebar-subtitle {
-        font-size: 0.65rem;
-    }
-
-    /* Make Forms menu swipeable horizontally */
-    .nav-menu {
-        flex-direction: row; 
-        overflow-x: auto; /* Allows swiping left/right to see all forms */
-        overflow-y: hidden;
-        white-space: nowrap;
-        gap: 8px;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch; /* Smooth swiping on iOS */
-        
-        /* Hide scrollbars for a cleaner mobile app look */
-        -ms-overflow-style: none;  /* IE/Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-
-    .nav-menu::-webkit-scrollbar {
-        display: none; /* Chrome/Safari/Opera */
-    }
-
-    .nav-btn {
-        flex-shrink: 0; /* Prevents buttons from squishing */
-        padding: 8px 12px;
-        font-size: 0.8rem;
-        border-radius: 6px;
-    }
-
-    .nav-btn:hover {
-        transform: none; /* Disable hover animation on tap devices */
-    }
-
-    .nav-separator {
-        display: none; /* Hide the divider line on mobile layout */
-    }
-
-    /* Adjust main content padding */
     .main-content {
         padding: 20px 15px;
-        overflow-y: visible;
     }
 
-    /* Format Topic Cards to fit nicely on small screens */
-    .topics-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Fits 2 cards side-by-side on most phones */
+    .grid-layout {
+        grid-template-columns: 1fr; /* Stack vertically on small phone screens */
         gap: 15px;
     }
 
-    .topic-icon-card {
-        padding: 15px 10px;
-        border-radius: 10px;
-        gap: 6px;
-    }
-
-    .icon-wrapper {
-        width: 44px;
-        height: 44px;
-        margin-bottom: 2px;
-    }
-
-    .svg-icon {
-        width: 22px;
-        height: 22px;
-    }
-
-    .topic-number {
-        font-size: 0.65rem;
-    }
-
-    .topic-title {
-        font-size: 0.85rem;
-    }
-
-    .topic-subtitle {
-        font-size: 0.7rem;
-        display: none; /* Hide subtitle on tiny cards to avoid text overcrowding */
-    }
-
-    .placeholder-text {
-        margin-top: 50px;
-        font-size: 0.95rem;
-    }
-
-    /* Adjust note reader panel size for phone screens */
-    .note-view-panel {
+    .menu-card {
         padding: 20px 15px;
-        border-radius: 10px;
     }
 
-    .back-btn {
-        padding: 8px 16px;
-        margin-bottom: 20px;
-        font-size: 0.8rem;
+    .card-icon {
+        font-size: 2.5rem;
     }
 
-    #note-body h1 {
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
+    .submenu-header-block {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 10px;
     }
 
-    #note-body p {
-        font-size: 0.95rem;
-        line-height: 1.65;
-        margin-bottom: 15px;
+    .submenu-inner-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .note-view {
+        padding: 20px;
     }
 }
