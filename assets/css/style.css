@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+/* Base copy prevention across elements */
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.app-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Sidebar Layout styles */
+.sidebar {
+    width: 280px;
+    background-color: #1e293b;
+    color: #f1f5f9;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 1px solid #0f172a;
+    flex-shrink: 0;
+}
+
+.sidebar-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #2dd4bf;
+    text-align: center;
+}
+
+.sidebar-subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #94a3b8;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.nav-btn {
+    background-color: #334155;
+    color: #f1f5f9;
+    border: none;
+    padding: 12px 16px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #2dd4bf;
+    color: #0f172a;
+    transform: translateX(4px);
+}
+
+.extra-btn {
+    background-color: #475569;
+}
+
+.nav-separator {
+    border: 0;
+    height: 1px;
+    background: #475569;
+    margin: 10px 0;
+}
+
+/* Content Area layout styles */
+.main-content {
+    flex: 1;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+/* Grid representing 5 interactive Topic Cards */
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Stylized interactive cards */
+.topic-icon-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 30px 20px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.topic-icon-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px -3px rgb(45 212 191 / 0.15);
+    border-color: #2dd4bf;
+}
+
+/* Circular Icon frame on the card */
+.icon-wrapper {
+    background-color: #f0fdfa;
+    color: #14b8a6;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    transition: background-color 0.2s;
+}
+
+.topic-icon-card:hover .icon-wrapper {
+    background-color: #ccfbf1;
+}
+
+.svg-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.topic-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.topic-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+}
+
+.topic-subtitle {
+    font-size: 0.825rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.placeholder-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-top: 120px;
+}
+
+.placeholder-text h2 {
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+/* Hidden container behavior */
+.hidden {
+    display: none !important;
+}
+
+/* Notes viewing panel */
+.note-view-panel {
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 35px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #dc2626;
+}
+
+/* Styles for note content */
+#note-body h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 15px;
+}
+
+#note-body p {
+    font-size: 1.125rem;
+    line-height: 1.85;
+    margin-bottom: 20px;
+    color: #334155;
+    text-align: justify;
+}
+
+#note-body strong {
+    color: #0f172a;
+    font-weight: 700;
+}
