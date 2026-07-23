@@ -3,57 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bible Knowledge and Divinity Notes</title>
+    <title>Bible Knowledge and Divinity Notes Portal</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="no-select">
 
     <div class="app-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h2>Divinity Notes</h2>
-                <p class="sidebar-subtitle">Academic Resource Panel</p>
+        <!-- Top Sticky Brand Header -->
+        <header class="app-header">
+            <div class="brand">
+                <h1>Divinity & Bible Knowledge Portal</h1>
+                <p>Comprehensive Academic Resource Panel</p>
             </div>
-            
-            <nav class="nav-menu">
-                <!-- Academic Form Classes -->
-                <button class="nav-btn" onclick="loadForm('form1')">Form One</button>
-                <button class="nav-btn" onclick="loadForm('form2')">Form Two</button>
-                <button class="nav-btn" onclick="loadForm('form3')">Form Three</button>
-                <button class="nav-btn" onclick="loadForm('form4')">Form Four</button>
-                <button class="nav-btn" onclick="loadForm('form5')">Form Five</button>
-                <button class="nav-btn" onclick="loadForm('form6')">Form Six</button>
-                
-                <hr class="nav-separator">
-                
-                <!-- Additional Resources -->
-                <button class="nav-btn extra-btn" onclick="loadExtra('syllabus')">Syllabus</button>
-                <button class="nav-btn extra-btn" onclick="loadExtra('past-papers')">Past Papers</button>
-                <button class="nav-btn extra-btn" onclick="loadExtra('reference')">Reference Books</button>
-                <button class="nav-btn extra-btn" onclick="loadExtra('about')">About Divinity</button>
-            </nav>
-        </aside>
+        </header>
 
-        <!-- Dynamic Loading Content Window -->
+        <!-- Main Workspace Area -->
         <main class="main-content">
-            <!-- 5 Topic Icons Grid will render here -->
-            <div id="topics-container" class="topics-grid">
-                <div class="placeholder-text">
-                    <h2>Welcome to Bible Knowledge & Divinity Notes</h2>
-                    <p>Please select a Form level from the left sidebar to begin studying.</p>
+            
+            <!-- SECTION 1: HOMEPAGE MAIN DASHBOARD (Visible on load) -->
+            <div id="homepage-dashboard" class="grid-layout">
+                <!-- Form 1 to 6 Cards -->
+                <div class="menu-card note-card" onclick="loadForm('form1')">
+                    <div class="card-icon">📖</div>
+                    <h3>Form One Notes</h3>
+                    <p>Access topics covering the introduction to Scriptures</p>
+                </div>
+                <div class="menu-card note-card" onclick="loadForm('form2')">
+                    <div class="card-icon">📖</div>
+                    <h3>Form Two Notes</h3>
+                    <p>Study covenants, leadership, and early kingdoms</p>
+                </div>
+                <div class="menu-card note-card" onclick="loadForm('form3')">
+                    <div class="card-icon">📖</div>
+                    <h3>Form Three Notes</h3>
+                    <p>Deep-dive into the prophets and kingdoms of Israel</p>
+                </div>
+                <div class="menu-card note-card" onclick="loadForm('form4')">
+                    <div class="card-icon">📖</div>
+                    <h3>Form Four Notes</h3>
+                    <p>New Testament studies and the ministry of Jesus Christ</p>
+                </div>
+                <div class="menu-card note-card" onclick="loadForm('form5')">
+                    <div class="card-icon">📖</div>
+                    <h3>Form Five Notes</h3>
+                    <p>Advanced divinity studies and theological analysis</p>
+                </div>
+                <div class="menu-card note-card" onclick="loadForm('form6')">
+                    <div class="card-icon">📖</div>
+                    <h3>Form Six Notes</h3>
+                    <p>Epistles, Acts of the Apostles, and church history</p>
+                </div>
+
+                <!-- Commercial & Premium Items -->
+                <div class="menu-card market-card" onclick="loadSchemesMenu()">
+                    <div class="card-icon">🛒</div>
+                    <h3>Bible Schemes</h3>
+                    <p>Purchase professional Schemes of Work for teachers</p>
+                </div>
+                <div class="menu-card market-card" onclick="loadLogbooksMenu()">
+                    <div class="card-icon">📝</div>
+                    <h3>Bible Logbooks</h3>
+                    <p>Get standard evaluation and record schemes</p>
+                </div>
+
+                <!-- PDF Reference Section -->
+                <div class="menu-card pdf-card" onclick="loadPDFMenu()">
+                    <div class="card-icon">📁</div>
+                    <h3>Reference Materials</h3>
+                    <p>Download syllabus files and reference booklets</p>
                 </div>
             </div>
 
-            <!-- Notes Viewer Panel (hidden by default) -->
-            <article id="note-view" class="note-view-panel hidden">
-                <button class="back-btn" onclick="closeNote()">← Back to Topics</button>
-                <div id="note-body"></div>
-            </article>
+            <!-- SECTION 2: THE SUBMENU (Holds dynamic topics, schemes, or pdf links) -->
+            <div id="submenu-container" class="grid-layout hidden">
+                <!-- Back navigation button is injected globally inside this space -->
+                <div class="submenu-header-block">
+                    <button class="back-btn" onclick="showHomepage()">← Back to Homepage</button>
+                    <h2 id="submenu-title">Category Name</h2>
+                </div>
+                <div id="submenu-grid" class="submenu-inner-grid">
+                    <!-- Dynamic content cards load here -->
+                </div>
+            </div>
+
+            <!-- SECTION 3: NOTES READING PANEL (Decodes and displays notes) -->
+            <div id="note-view-panel" class="note-view hidden">
+                <button class="back-btn" onclick="backToSubmenu()">← Back to Topics</button>
+                <article id="note-body"></article>
+            </div>
+
         </main>
     </div>
 
-    <!-- Script that powers dynamic decryption and flow control -->
     <script src="assets/js/app.js"></script>
 </body>
 </html>
