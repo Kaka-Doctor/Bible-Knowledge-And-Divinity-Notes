@@ -78,7 +78,7 @@
             <div id="submenu-container" class="grid-layout hidden">
                 <!-- Back navigation button is injected globally inside this space -->
                 <div class="submenu-header-block">
-                    <button class="back-btn" onclick="showHomepage()">← Back to Homepage</button>
+                    <button class="back-btn" onclick="history.back()">← Back to Homepage</button>
                     <h2 id="submenu-title">Category Name</h2>
                 </div>
                 <div id="submenu-grid" class="submenu-inner-grid">
@@ -88,7 +88,7 @@
 
             <!-- SECTION 3: NOTES READING PANEL (Decodes and displays notes) -->
             <div id="note-view-panel" class="note-view hidden">
-                <button class="back-btn" onclick="backToSubmenu()">← Back to Topics</button>
+                <button class="back-btn" onclick="history.back()">← Back to Topics</button>
                 <article id="note-body"></article>
             </div>
 
