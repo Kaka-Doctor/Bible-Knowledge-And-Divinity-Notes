@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Knowledge and Divinity Notes</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="no-select">
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Divinity Notes</h2>
+                <p class="sidebar-subtitle">Academic Resource Panel</p>
+            </div>
+            
+            <nav class="nav-menu">
+                <!-- Academic Form Classes -->
+                <button class="nav-btn" onclick="loadForm('form1')">Form One</button>
+                <button class="nav-btn" onclick="loadForm('form2')">Form Two</button>
+                <button class="nav-btn" onclick="loadForm('form3')">Form Three</button>
+                <button class="nav-btn" onclick="loadForm('form4')">Form Four</button>
+                <button class="nav-btn" onclick="loadForm('form5')">Form Five</button>
+                <button class="nav-btn" onclick="loadForm('form6')">Form Six</button>
+                
+                <hr class="nav-separator">
+                
+                <!-- Additional Resources -->
+                <button class="nav-btn extra-btn" onclick="loadExtra('syllabus')">Syllabus</button>
+                <button class="nav-btn extra-btn" onclick="loadExtra('past-papers')">Past Papers</button>
+                <button class="nav-btn extra-btn" onclick="loadExtra('reference')">Reference Books</button>
+                <button class="nav-btn extra-btn" onclick="loadExtra('about')">About Divinity</button>
+            </nav>
+        </aside>
+
+        <!-- Dynamic Loading Content Window -->
+        <main class="main-content">
+            <!-- 5 Topic Icons Grid will render here -->
+            <div id="topics-container" class="topics-grid">
+                <div class="placeholder-text">
+                    <h2>Welcome to Bible Knowledge & Divinity Notes</h2>
+                    <p>Please select a Form level from the left sidebar to begin studying.</p>
+                </div>
+            </div>
+
+            <!-- Notes Viewer Panel (hidden by default) -->
+            <article id="note-view" class="note-view-panel hidden">
+                <button class="back-btn" onclick="closeNote()">← Back to Topics</button>
+                <div id="note-body"></div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Script that powers dynamic decryption and flow control -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
