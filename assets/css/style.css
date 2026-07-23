@@ -243,3 +243,143 @@ body {
     color: #0f172a;
     font-weight: 700;
 }
+
+/* ==========================================
+   RESPONSIVE DESIGN FOR MOBILE PHONES
+   ========================================== */
+@media (max-width: 768px) {
+    body {
+        overflow: auto; /* Allow natural page scrolling on mobile */
+    }
+
+    .app-container {
+        flex-direction: column; /* Stack sidebar on top of content */
+        height: auto;
+    }
+
+    /* Transform Sidebar into a Sticky Top Bar */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px 15px 10px 15px;
+        border-right: none;
+        border-bottom: 1px solid #0f172a;
+        position: sticky;
+        top: 0;
+        z-index: 100; /* Keeps menu on top when scrolling notes */
+        gap: 10px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .sidebar-subtitle {
+        font-size: 0.65rem;
+    }
+
+    /* Make Forms menu swipeable horizontally */
+    .nav-menu {
+        flex-direction: row; 
+        overflow-x: auto; /* Allows swiping left/right to see all forms */
+        overflow-y: hidden;
+        white-space: nowrap;
+        gap: 8px;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch; /* Smooth swiping on iOS */
+        
+        /* Hide scrollbars for a cleaner mobile app look */
+        -ms-overflow-style: none;  /* IE/Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Opera */
+    }
+
+    .nav-btn {
+        flex-shrink: 0; /* Prevents buttons from squishing */
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+
+    .nav-btn:hover {
+        transform: none; /* Disable hover animation on tap devices */
+    }
+
+    .nav-separator {
+        display: none; /* Hide the divider line on mobile layout */
+    }
+
+    /* Adjust main content padding */
+    .main-content {
+        padding: 20px 15px;
+        overflow-y: visible;
+    }
+
+    /* Format Topic Cards to fit nicely on small screens */
+    .topics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Fits 2 cards side-by-side on most phones */
+        gap: 15px;
+    }
+
+    .topic-icon-card {
+        padding: 15px 10px;
+        border-radius: 10px;
+        gap: 6px;
+    }
+
+    .icon-wrapper {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 2px;
+    }
+
+    .svg-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .topic-number {
+        font-size: 0.65rem;
+    }
+
+    .topic-title {
+        font-size: 0.85rem;
+    }
+
+    .topic-subtitle {
+        font-size: 0.7rem;
+        display: none; /* Hide subtitle on tiny cards to avoid text overcrowding */
+    }
+
+    .placeholder-text {
+        margin-top: 50px;
+        font-size: 0.95rem;
+    }
+
+    /* Adjust note reader panel size for phone screens */
+    .note-view-panel {
+        padding: 20px 15px;
+        border-radius: 10px;
+    }
+
+    .back-btn {
+        padding: 8px 16px;
+        margin-bottom: 20px;
+        font-size: 0.8rem;
+    }
+
+    #note-body h1 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    #note-body p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 15px;
+    }
+}
